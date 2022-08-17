@@ -1,0 +1,46 @@
+using "System.bs";
+
+class Deneme
+{
+	public string isim;
+	public Deneme(string isim)
+	{
+		this.isim = isim;
+	}
+	
+	public override string ToString()
+	{
+		return this.isim;
+	}
+}
+
+class Program
+{
+	public static void Main()
+	{
+		cout << new Deneme("Batuhan").ToString() << "\n";
+		return 0;
+	}
+}
+
+------------------------------------------------------------------------
+
+sistem kütüphanesi içeri aktarıldı
+
++Deneme
++-String::isim{++}
++-Deneme::Deneme(string isim){+-}
+  +-Yeni bir Deneme oluştur. Yazı parametresini isim'e yazdırır
++-String::ToString(){+-}
+  +-isim'i al ve dışarı ver
+
++Program
++-static Func::Main()
+  +-Başlangıç komududur
+    +-Yeni bir "Batuhan" parametreli Deneme oluşturup ekrana yazdırır
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+

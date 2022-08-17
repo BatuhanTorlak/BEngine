@@ -1,0 +1,5 @@
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\netcoreapp1.0\BEngine.csproj.AssemblyReference.cache
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\netcoreapp1.0\BEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\netcoreapp1.0\BEngine.AssemblyInfoInputs.cache
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\netcoreapp1.0\BEngine.AssemblyInfo.cs
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\netcoreapp1.0\BEngine.csproj.CoreCompileInputs.cache
