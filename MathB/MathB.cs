@@ -111,6 +111,20 @@ namespace BEngine.MathB
             return i;
         }
 
+        public static int Pow(int num, int pow)
+        {
+            if (pow == 0)
+                return 1;
+
+            var i = 1;
+            while (pow > 0)
+            {
+                i *= num;
+                pow--;
+            }
+            return i;
+        }
+
         public static Vector3 Pow(Vector3 v, int pow)
         {
             if (pow == 0)
@@ -122,6 +136,7 @@ namespace BEngine.MathB
                 i.x *= v.x;
                 i.y *= v.y;
                 i.z *= v.z;
+                pow--;
             }
             return i;
         }
@@ -136,6 +151,7 @@ namespace BEngine.MathB
             {
                 i.x *= v.x;
                 i.y *= v.y;
+                pow--;
             }
             return i;
         }

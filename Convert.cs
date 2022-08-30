@@ -13,12 +13,14 @@ namespace BEngine
         public static byte ToInt8(System.IConvertible value) => value.ToByte(null);
         public static long ToInt64(System.IConvertible value) => value.ToInt64(null);
         public static char ToChar(System.IConvertible value) => value.ToChar(null);
+        public static short ToInt16(System.IConvertible value) => value.ToInt16(null);
 
         public static int ToInt32(IConvertible value) => value.ToInt32();
         public static float ToFloat(IConvertible value) => value.ToFloat();
         public static double ToDouble(IConvertible value) => value.ToDouble();
         public static Irr32 ToIrr32(IConvertible value) => value.ToIrr32();
         public static byte ToInt8(IConvertible value) => value.ToInt8();
+        public static short ToInt16(IConvertible value) => value.ToInt16();
         public static long ToInt64(IConvertible value) => value.ToInt64();
         public static char ToChar(IConvertible value) => value.ToChar();
         public static BInt ToBInt(IConvertible value) => value.ToBInt();

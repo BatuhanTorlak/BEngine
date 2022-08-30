@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using BEngine;
+﻿using BEngine;
+using BEngine.List;
 
 namespace BEngine.BSharp
 {
     static class Syntax
     {
-        public static string[] CutSyntax(string title)
+        public static BString[] CutSyntax(BString title)
         {
-            List<string> vs = new List<string>();
+            BList<BString> vs = new BList<BString>();
 
             return vs.ToArray();
         }

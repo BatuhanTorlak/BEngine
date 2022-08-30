@@ -1,6 +1,8 @@
-﻿namespace BEngine
+﻿using BEngine.List;
+
+namespace BEngine
 {
-    public struct BStringPtr
+    public struct BStringPtr : IListable<BChar>
     {
         public static unsafe implicit operator BStringPtr(BChar* words) => new BStringPtr(words);
         public static unsafe implicit operator BStringPtr(char* words) => new BStringPtr(words);
@@ -99,6 +101,16 @@
                 txt += *(ts + x);
             }
             return txt;
+        }
+
+        public BArray<BChar> ToBArray()
+        {
+            return ToArray();
+        }
+
+        public RepeatableList<BChar> GetRepeatableList()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

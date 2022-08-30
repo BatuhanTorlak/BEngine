@@ -1,6 +1,7 @@
 namespace BEngine
 {
     using List;
+    using Task;
 
     public static class BFuncs
     {
@@ -64,14 +65,7 @@ namespace BEngine
             System.Threading.Tasks.Task.Run(command);
         }
 
-        public static void AsyncFunc(System.Action command, float time)
-        {
-            System.Threading.Tasks.Task.Run(() =>
-            {
-                System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task.Delay((int)(time * 1000)));
-                command.Invoke();
-            });
-        }
+        public static void AsyncFunc(BAction command, float time) => BTask.Invoke(command, time);
 
         public unsafe static int GetSize<T>(T* ptr) where T : unmanaged
         {

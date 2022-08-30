@@ -5,7 +5,7 @@ using BEngine.List;
 
 namespace BEngine
 {
-    public partial struct BString
+    public partial struct BString : IListable<char>, IListable<BChar>, IConvertible
     {
         public static BString operator +(BString right, char left)
         {
@@ -231,6 +231,44 @@ namespace BEngine
             return x.ToArray();
         }
 
+        public static BString ToUpperCase(BString txt)
+        {
+            BString newTxt = "";
+
+            for (var x = 0; x < txt.Length; x++)
+            {
+                if ((short)txt[x] <= 90 & (short)txt[x] >= 65)
+                {
+                    newTxt += (char)((short)txt[x] + 32);
+                }
+                else
+                    newTxt += txt[x];
+            }
+
+            return newTxt;
+        }
+
+        public BString ToUpperCase() => ToUpperCase(this);
+
+        public static BString ToLowerCase(BString txt)
+        {
+            BString newTxt = "";
+
+            for (var x = 0; x < txt.Length; x++)
+            {
+                if (((short)txt[x] <= 90 & (short)txt[x] >= 65) | (short)txt[x] == 252)
+                {
+                    newTxt += (char)((short)txt[x] + 32);
+                }
+                else
+                    newTxt += txt[x];
+            }
+
+            return newTxt;
+        }
+
+        public BString ToLowerCase() => ToLowerCase(this);
+
         public BString GetBetween(int endIndex)
         {
             if (endIndex == Length)
@@ -312,7 +350,7 @@ namespace BEngine
 
             for (var x = 0; x < Length; x++)
             {
-                vs[x] += metin[Length - 1 - x];
+                vs[x] = metin[Length - 1 - x];
             }
 
             return vs;
@@ -395,6 +433,129 @@ namespace BEngine
         public char[] ToCharArray()
         {
             return metin;
+        }
+
+        public BArray<char> ToBArray()
+        {
+            return metin;
+        }
+
+        public char[] ToArray()
+        {
+            return metin;
+        }
+
+        public RepeatableList<char> GetRepeatableList()
+        {
+            return new RepeatableList<char>(metin);
+        }
+
+        BArray<BChar> IListable<BChar>.ToBArray()
+        {
+            BArray<BChar> arr = new BArray<BChar>(Length);
+            for (var x = 0; x < Length; x++)
+            {
+                arr[x] = metin[x];
+            }
+            return arr;
+        }
+
+        BChar[] IListable<BChar>.ToArray()
+        {
+            BChar[] arr = new BChar[Length];
+            for (var x = 0; x < Length; x++)
+            {
+                arr[x] = metin[x];
+            }
+            return arr;
+        }
+
+        RepeatableList<BChar> IListable<BChar>.GetRepeatableList()
+        {
+            BChar[] arr = new BChar[Length];
+            for (var x = 0; x < Length; x++)
+            {
+                arr[x] = metin[x];
+            }
+            return new RepeatableList<BChar>(arr);
+        }
+
+        public int ToInt32()
+        {
+            int num = 0;
+            for (var x = 0; x < Length; x++)
+            {
+                num += Convert.ToInt8(metin[x]) * MathB.MathB.Pow(10, Length - x);
+            }
+            return num;
+        }
+
+        public float ToFloat()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public double ToDouble()
+        {
+            double num = 0;
+            for (var x = 0; x < Length; x++)
+            {
+                num += Convert.ToInt8(metin[x]) * MathB.MathB.Pow(10, Length - x);
+            }
+            return num;
+        }
+
+        public Irr32 ToIrr32()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public byte ToInt8()
+        {
+            byte num = 0;
+            for (var x = 0; x < Length; x++)
+            {
+                num += (byte)(Convert.ToInt8(metin[x]) * MathB.MathB.Pow(10, Length - x));
+            }
+            return num;
+        }
+
+        public short ToInt16()
+        {
+            short num = 0;
+            for (var x = 0; x < Length; x++)
+            {
+                num += (short)(Convert.ToInt8(metin[x]) * MathB.MathB.Pow(10, Length - x));
+            }
+            return num;
+        }
+
+        public long ToInt64()
+        {
+            long num = 0;
+            for (var x = 0; x < Length; x++)
+            {
+                num += Convert.ToInt8(metin[x]) * MathB.MathB.Pow(10, Length - x);
+            }
+            return num;
+        }
+
+        public char ToChar()
+        {
+            throw null;
+        }
+
+        public BInt ToBInt()
+        {
+            throw null;
+        }
+
+        public bool ToBool()
+        {
+            if (this.ToLowerCase() == "false")
+                return false;
+
+            throw null;
         }
     }
 }

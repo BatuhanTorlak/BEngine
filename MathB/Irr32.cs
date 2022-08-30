@@ -196,6 +196,8 @@
 
         public BInt ToBInt() => new BInt(ToInt64());
 
+        public short ToInt16() => (short)ToInt32();
+
         public override string ToString() => $"{Upper}/{Downer}";
 
         public bool ToBool()

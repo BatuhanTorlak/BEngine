@@ -1,6 +1,5 @@
 C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\bin\Debug\net5.0\BEngine.deps.json
 C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\bin\Debug\net5.0\BEngine.dll
-C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\bin\Debug\net5.0\ref\BEngine.dll
 C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\bin\Debug\net5.0\BEngine.pdb
 C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\net5.0\BEngine.csproj.AssemblyReference.cache
 C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\net5.0\BEngine.GeneratedMSBuildEditorConfig.editorconfig
@@ -22,3 +21,4 @@ C:\Users\user\Desktop\BEngine\BEngine\bin\Debug\net5.0\BEngine.dll
 C:\Users\user\Desktop\BEngine\BEngine\bin\Debug\net5.0\BEngine.pdb
 C:\Users\user\Desktop\BEngine\BEngine\obj\Debug\net5.0\refint\BEngine.dll
 C:\Users\user\Desktop\BEngine\BEngine\obj\Debug\net5.0\ref\BEngine.dll
+C:\Users\torla\Documents\Yazılım Geliştirme\source\repos\Batus\BEngine\BEngine\obj\Debug\net5.0\refint\BEngine.dll

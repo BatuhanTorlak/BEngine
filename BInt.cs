@@ -73,6 +73,18 @@ namespace BEngine
 
         public byte ToInt8() => nums[0];
 
+        public short ToInt16()
+        {
+            long x = 0;
+            foreach (var i in nums)
+            {
+                x += i;
+                if (x > short.MaxValue)
+                    return short.MaxValue;
+            }
+            return (short)(x * (IsNegative ? -1 : 1));
+        }
+
         public Irr32 ToIrr32() => ToInt32();
 
         public override string ToString() => ToInt64().ToString();

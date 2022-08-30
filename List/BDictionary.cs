@@ -4,6 +4,21 @@
     {
         private BList<DoubleVaruable<T, T1>> vars = new BList<DoubleVaruable<T, T1>>();
 
+        public BDictionary(T[] headers, T1[] values)
+        {
+            Add(headers, values);
+        }
+
+        public BDictionary(T header, T1 value)
+        {
+            Add(header, value);
+        }
+
+        public BDictionary()
+        {
+
+        }
+
         public T1 this[T i]
         {
             get

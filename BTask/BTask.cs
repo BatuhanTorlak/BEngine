@@ -2,22 +2,21 @@
 #define BTASK
 #endif
 
-using System.Threading.Tasks;
-
 namespace BEngine.Task
 {
+    using List;
     public static class BTask
     {
-        private static System.Collections.Generic.Dictionary<int, BTasks> btasks;
+        private static BDictionary<int, BTasks> btasks;
         private static bool IsFinished;
         private static int LastCodeCt;
         private class BTasks
         {
-            internal System.Action cmd;
+            internal BAction cmd;
             internal float rpt;
             private bool Runnable;
 
-            internal BTasks(System.Action act, float t)
+            internal BTasks(BAction act, float t)
             {
                 cmd = act;
                 rpt = t;
@@ -39,12 +38,12 @@ namespace BEngine.Task
             }
         }
 
-        public static int InvokeRepeating(System.Action cmd, float t)
+        public static int InvokeRepeating(BAction cmd, float t)
         {
             if (!IsFinished)
             {
                 LastCodeCt = 0;
-                btasks = new System.Collections.Generic.Dictionary<int, BTasks>();
+                btasks = new BDictionary<int, BTasks>();
                 btasks.Add(0, new BTasks(cmd, t));
                 IsFinished = true;
                 return 0;
@@ -60,26 +59,26 @@ namespace BEngine.Task
         {
             btasks[i].Stop();
             btasks.Remove(i);
-            if (btasks.Count == 0)
+            if (btasks.Count() == 0)
                 IsFinished = false;
         }
 
         public static void CancelInvokeAll()
         {
             IsFinished = false;
-            if (btasks != null & btasks.Count != 0)
+            if (btasks != null & btasks.Count() != 0)
             {
-                foreach(var x in btasks)
-                    x.Value.Stop();
-                btasks.Clear();
+                foreach(var x in btasks.ToArray())
+                    x.second.Stop();
+                btasks = new BDictionary<int, BTasks>();
             }
         }
 
-        public static void Invoke(System.Action command, float t)
+        public static void Invoke(BAction command, float t)
         {
             System.Threading.Tasks.Task.Run(() =>
             {
-                System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task.Delay(System.Convert.ToInt32(t * 1000)));
+                System.Threading.Tasks.Task.Delay(Convert.ToInt32(t * 1000)).Wait();
                 command.Invoke();
             });
         }
