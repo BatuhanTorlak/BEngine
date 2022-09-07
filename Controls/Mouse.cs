@@ -19,14 +19,22 @@
             set => Position = new Vector2Int(Position.x, value);
         }
 
-        public static void Click(int x = 0, int y = 0)
+        public static void Click()
         {
+            Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
+            Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTUP, x, y, 0, 0);
+        }
+
+        public static void Click(int x, int y)
+        {
+            Position = new Vector2Int(x, y);
             Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0);
             Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTUP, x, y, 0, 0);
         }
 
         public static void Click(Vector2Int pos)
         {
+            Position = pos;
             Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTDOWN, pos.x, pos.y, 0, 0);
             Win32Mouse.mouse_event(ControlVaruables.Mouse.MOUSEEVENTF_LEFTUP, pos.x, pos.y, 0, 0);
         }

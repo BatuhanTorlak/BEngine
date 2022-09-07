@@ -12,7 +12,7 @@
         public int Width { get => _width; set => Resize(value, _height); }
         public int Height { get => _height; set => Resize(_width, value); }
         
-        Color this[int x, int y]
+        public Color this[int x, int y]
         {
             get => map[x, y];
             set => map[x, y] = value;
@@ -54,7 +54,7 @@
 
         public void ReFill(Color color, params Color[] colors)
         {
-            BList<Color> clrs = colors;
+            BArray<Color> clrs = colors;
             for (var y = 0; y < _width; y++)
             {
                 for (var x = 0; x < _height; x++)
